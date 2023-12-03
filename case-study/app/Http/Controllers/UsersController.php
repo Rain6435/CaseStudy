@@ -17,13 +17,22 @@ class tempObject{
 class UsersController extends Controller
 {
     public function log(Request $request){
+        
         $timezone = new DateTimeZone("US/Eastern");
         $today = new DateTime('now',$timezone);
-        User::create([
+        error_log($request->ip());
+        try {
+            User::create([
             'name'=>$request->user,
             'checked_at'=>$today,
+            'left_at'=>null,
             'ip'=>$request->ip(),
         ]);
+        } catch (\Throwable $th) {
+            error_log($th);
+        }
+        
+        
     }
     public function users(){
         $users = User::all('name','checked_at');
