@@ -16,7 +16,7 @@ export default {
     methods: {
         sendRequest() {
             axios
-                .get("http://192.168.1.217:80/users")
+                .get("http://127.0.0.1:8000/users")
                 .then((res) => {
                     if (res.status == 200) {
                         this.users = res.data;

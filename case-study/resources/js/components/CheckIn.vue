@@ -11,7 +11,7 @@ export default {
     methods: {
         checkInUser() {
             axios
-                .post("http://192.168.1.217:80/log", { user: this.name })
+                .post("http://127.0.0.1:8000/log", { user: this.name })
                 .then((res) => {
                     if (res.status == 200) {
                         confirm("You have checked in! \nHave a wonderful day.");

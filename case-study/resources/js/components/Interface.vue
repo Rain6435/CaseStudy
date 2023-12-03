@@ -11,14 +11,14 @@ export default {
     },
     methods: {
         checkIfInActive() {
-            axios.get("http://192.168.1.217:80/logged").then((res) => {
+            axios.get("http://127.0.0.1:8000/logged").then((res) => {
                 if (res.status == 201) {
                     this.isLoggedIn = true;
                 }
             });
         },
         checkOut() {
-            axios.post("http://192.168.1.217:80/checkout").then((res) => {
+            axios.post("http://127.0.0.1:8000/checkout").then((res) => {
                 if (res.status == 201) {
                     this.isLoggedIn = false;
                     localStorage.removeItem("logged");
