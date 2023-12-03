@@ -56,10 +56,10 @@
             Install all your dependencies; <b>npm i</b>
         </li>
         <li>
-            Start laravel project with <b>php artisan serve</b>.
+            Start laravel project; <b>php artisan serve</b>.
         </li>
         <li>
-            Start vue application  with <b>npm run dev</b> in a different terminal.
+            Start vue application; <b>npm run dev</b> (in a new terminal).
         </li>
         <li>
             Access the webpage through the address given by php artisan.
