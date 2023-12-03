@@ -8,3 +8,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/512px-Vue.js_Logo_2.svg.png" width="200" height="150" alt="Vue.js Logo">
     </a>
 </p>
+<p align="center">
+    <a href="https://tailwindcss.com/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png?20230715030042" width="200" height="150" alt="Vue.js Logo">
+    </a>
+</p>
