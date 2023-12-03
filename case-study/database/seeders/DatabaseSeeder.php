@@ -15,7 +15,13 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::create([
             'name' => 'Marco',
-            'ip' => '1.2.3.4'
+            'ip' => '1.2.3.4',
+            'left_at'=>null
+        ]);
+        \App\Models\User::create([
+            'name' => 'John',
+            'ip' => '2.2.1.1',
+            'left_at'=>null
         ]);
     }
 }

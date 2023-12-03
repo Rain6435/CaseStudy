@@ -65,4 +65,7 @@
             Access the webpage through the address given by php artisan.
         </li>
     </ul>
+    <p>
+        Implementation of function to delete all users at midnight is in <b>app\Http\Kernel.php</b>.
+    </p>
 </p>

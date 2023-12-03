@@ -26,8 +26,6 @@ Route::get("/logged",[UsersController::class, 'logged']);
 
 Route::post("/checkout",[UsersController::class, 'checkout']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('{slug}',function(){
     return view('welcome');
 });
