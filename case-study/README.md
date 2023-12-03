@@ -10,6 +10,6 @@
 </p>
 <p align="center">
     <a href="https://tailwindcss.com/">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png?20230715030042" width="200" height="150" alt="Vue.js Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png?20230715030042" width="300" height="150" alt="Vue.js Logo">
     </a>
 </p>
