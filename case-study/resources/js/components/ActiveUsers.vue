@@ -20,9 +20,8 @@ export default {
                 .then((res) => {
                     if (res.status == 200) {
                         this.users = res.data;
-                        console.log(this.users[0]);
                     } else {
-                        console.log("error fetching data");
+                        confirm("Oups! We couldn't retrive the data. \nPlease try again later.");
                     }
                 })
                 .then(() => {
@@ -35,9 +34,6 @@ export default {
                     });
                 });
         },
-    },
-    mounted() {
-        console.log("Component mounted.");
     },
 };
 </script>

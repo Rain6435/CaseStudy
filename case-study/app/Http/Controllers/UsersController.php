@@ -6,19 +6,22 @@ use App\Models\User;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class UsersController extends Controller
 {
-    public function log(Request $request){
+    public function checkin(Request $request){
         $timezone = new DateTimeZone("US/Eastern");
         $today = new DateTime('now',$timezone);
         try {
             User::create([
             'name'=>$request->user,
             'checked_at'=>$today,
+            'uuid'=>$request->uuid,
             'left_at'=>null,
             'ip'=>$request->ip(),
         ]);
+        return response("you are gayu",200);
         } catch (\Throwable $th) {
             throw $th;
             return response("Internal Error",500);
@@ -37,9 +40,10 @@ class UsersController extends Controller
         try {
             $v = User::where('ip','=',$request->ip())->count();
             if($v>=1){
-                return response("Exists",201);
+                return response("Ok",201);
             }else{
-                return response("Ok",200);
+                $token = URL::temporarySignedRoute('checkin', now()->addMinutes(60));
+                return $token;
         }
         } catch (\Throwable $th) {
             throw $th;

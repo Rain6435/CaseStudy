@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class Kernel extends HttpKernel
 {
+    /**
+     * Function to delete all users at midnight.
+     */
     protected function schedule(Schedule $schedule): void
     {
         $schedule->call(function () {

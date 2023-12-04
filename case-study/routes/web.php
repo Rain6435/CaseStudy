@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::any("/", function () {
     return view('welcome');
-});
+})->name('/');
 
-Route::get('/users',[UsersController::class,'users']);
+Route::get('/users',[UsersController::class,'users'])->name('users');
 
-Route::post("/log", [UsersController::class, 'log']);
+Route::post("/checkin", [UsersController::class, 'checkin'])->name("checkin")->middleware('signed');
 
-Route::get("/logged",[UsersController::class, 'logged']);
+Route::get("/logged",[UsersController::class, 'logged'])->name("logged");
 
-Route::post("/checkout",[UsersController::class, 'checkout']);
+Route::post("/checkout",[UsersController::class, 'checkout'])->name("checkout");
 
 Route::get('{slug}',function(){
     return view('welcome');

@@ -14,6 +14,8 @@ export default {
             axios.get("http://127.0.0.1:8000/logged").then((res) => {
                 if (res.status == 201) {
                     this.isLoggedIn = true;
+                }else{
+                    localStorage.setItem("signedCheckin", res.data);
                 }
             });
         },
@@ -22,6 +24,7 @@ export default {
                 if (res.status == 201) {
                     this.isLoggedIn = false;
                     localStorage.removeItem("logged");
+                    localStorage.removeItem("signedCheckin")
                     confirm(
                         "You have checked out successfully!\nHoping to see you soon."
                     );
@@ -44,11 +47,11 @@ export default {
     <div>
         <div class="">
             <div
-                class="h-max flex-col portrait:mt-[15%] mt-[15px] items-center justify-center"
+                class="h-max flex-col portrait:mt-[10%] mt-[5%] items-center justify-center"
             >
                 <div class="text-blue-50 flex items-center justify-center ml-3">
                     <h1
-                        class="mb-4 text-[80px] font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+                        class="mb-4 text-[80px] font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl lg:text-6xl dark:text-white"
                     >
                         Check in/Check out
                     </h1>

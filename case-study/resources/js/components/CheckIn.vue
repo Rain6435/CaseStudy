@@ -4,20 +4,23 @@ import axios from "axios";
 export default {
     data() {
         return {
-            name: localStorage.getItem("name") || '',
+            name: localStorage.getItem("name") || "",
             logged: false,
         };
     },
     methods: {
         checkInUser() {
             axios
-                .post("http://127.0.0.1:8000/log", { user: this.name })
+                .post(
+                    localStorage.getItem("signedCheckin"),
+                    { user: this.name }
+                )
                 .then((res) => {
                     if (res.status == 200) {
                         confirm("You have checked in! \nHave a wonderful day.");
-                        localStorage.setItem("name",this.name);
-                        localStorage.setItem("logged",true);
-                        location.href = "/"
+                        localStorage.setItem("name", this.name);
+                        localStorage.setItem("logged", true);
+                        location.href = "/";
                     } else {
                         confirm(
                             "We couldn't handle your request. \nPlease try again later."
