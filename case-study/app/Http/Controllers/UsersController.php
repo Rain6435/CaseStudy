@@ -21,7 +21,7 @@ class UsersController extends Controller
             'left_at'=>null,
             'ip'=>$request->ip(),
         ]);
-        return response("you are gayu",200);
+        return response("Ok",200);
         } catch (\Throwable $th) {
             throw $th;
             return response("Internal Error",500);
